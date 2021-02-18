@@ -1,0 +1,122 @@
+<div class="h-full" fxLayout="column">
+    <div class="p-6 pb-0 bg-card shadow-b" fxFlex="none">
+      <div vexContainer>
+        <h1 class="display-1 mt-0 mb-4" fxLayout="row" fxLayoutAlign="start center">
+        <span @scaleIn
+              class="w-12 h-12 rounded-full text-primary ltr:mr-4 rtl:ml-4 flex items-center justify-center bg-primary-light">
+        <ic-icon [icon]="icSchool" size="24px"></ic-icon>
+        </span>
+          <span @fadeInRight class="block">Schools</span>
+        </h1>
+        <!--<div>
+          <div class="filtre" fxLayout="row" >
+          
+            <div class="checkbox" *ngFor="let typeSchool of SchoolsList">
+        
+              <label>
+                <input  type="checkbox" class="larger" [value]="typeSchool"  />
+                {{typeSchool}}
+              </label>
+            </div>
+           
+          </div>
+        </div>-->
+        
+  
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <nav class="vex-tabs border-0" fxFlex="auto" mat-tab-nav-bar>
+            <a #rla="routerLinkActive"
+               *ngFor="let link of links"
+               [active]="rla.isActive"
+               [disabled]="link.disabled"
+               [routerLink]="link.route"
+               mat-tab-link
+               routerLinkActive>
+              {{ link.label }}
+            </a>
+          </nav>
+  
+          <!--
+  
+          <button (click)="infoSchool()"
+                  class="ltr:ml-1 rtl:mr-1"
+                  color="primary"
+                  fxFlex="none"
+                  fxHide.gt-xs
+                  mat-mini-fab
+                  matTooltip="Add school"
+                  type="button">
+            <mat-icon [icIcon]="icPersonAdd"></mat-icon>
+          </button>
+  
+          <button (click)="infoSchool()"
+                  class="ltr:ml-4 rtl:mr-4"
+                  color="primary"
+                  fxFlex="none"
+                  fxHide.xs
+                  mat-raised-button
+                  type="button">
+            <ic-icon [icon]="icPersonAdd"
+                     class="ltr:mr-2 rtl:ml-2 ltr:-ml-1 rtl:-mr-1"
+                     inline="true"
+                     size="20px"></ic-icon>
+            <span>ADD SCHOOL</span>
+          </button>-->
+        </div>
+      </div>
+    </div>
+    
+  
+    <div *ngIf="(filteredSchools$ | async).length > 0"
+         @stagger
+         class="overflow-y-auto"
+         fxFlex="auto">
+      <div class="p-gutter"
+           vexContainer
+           gdColumns="1fr 1fr 1fr 1fr"
+           gdColumns.lt-md="1fr 1fr"
+           gdColumns.xs="1fr"
+           gdGap="24px">
+          <vex-schools-card (infoSchool)="infoSchool($event)"
+                            (toggleStar)="toggleStar($event)"
+                            *ngFor="let schools of filteredSchools$ | async; trackBy: trackById"
+                            @fadeInUp
+                            [schools]="schools"></vex-schools-card>
+      </div>
+
+    </div>
+  
+    <div *ngIf="(filteredSchools$ | async).length === 0"
+         @scaleFadeIn
+         fxFlex="auto"
+         fxLayout="column"
+         fxLayoutAlign="center center">
+      <img class="m-12 h-64" src="assets/img/illustrations/idea.svg">
+      <h2 class="headline m-0 text-center">No schools matching your filters</h2>
+    </div>
+
+    
+
+    <div *ngIf="star_page === true" fxLayoutAlign="center center">
+      <div *ngIf="(filteredSchools$ | async).length ===0 || (filteredSchools$ | async).length>3; then disableBtn else aviableBtn"
+        @scaleFadeIn
+        fxFlex="auto"
+        fxLayout="column"
+        fxLayoutAlign="center center">
+      </div>
+      <ng-template #disableBtn  @scaleFadeIn
+      fxFlex="auto"
+      fxLayout="column">
+        <h2 class="headline m-0 text-center" fxLayout="column">Vous devez selectionnez au maximum écoles</h2>
+        <button mat-raised-button fxLayout="column" type="button" (click)="openDialog()" color="primary" disabled="true">Enregistrer toutes mes sélections</button>
+      </ng-template>
+      <ng-template #aviableBtn >
+        <button mat-raised-button type="button" (click)="openDialog()" color="primary" disabled="false">Enregistrer toutes mes sélections</button>
+      </ng-template>
+
+     
+        
+    </div>
+   
+  </div>
+  

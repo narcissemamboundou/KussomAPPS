@@ -1,0 +1,124 @@
+<div class="mt-6 flex flex-col md:flex-row md:items-start">
+  <div class="flex-auto">
+    <div class="card">
+      <div class="px-gutter py-4 border-b" fxLayout="row">
+        <h2 class="title m-0">Narcisse</h2>
+        <div  class="btn_modify rounded-full bg-primary-light">
+          <button  (click)="open()"  mat-icon-button type="button">
+            <mat-icon [icIcon]="icEdit"></mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="px-gutter py-4" gdColumns="1fr 1fr" gdColumns.xs="1fr" gdGap="16px">
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+               class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icContact" size="20px"></ic-icon>
+          </div>
+
+          <div @fadeInRight>
+            <p class="m-0 body-1">narcisse.mbd@example.com</p>
+            <p class="m-0 caption text-hint">+33 640919797</p>
+          </div>
+        </div>
+
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+               class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icDate" size="20px"></ic-icon>
+          </div>
+
+          <div @fadeInRight>
+            <p class="m-0 body-1">13/05/1995</p>
+            <p class="m-0 caption text-hint">Nationalité Gabonaise</p>
+          </div>
+        </div>
+
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+               class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icWork" size="20px"></ic-icon>
+          </div>
+
+          <div @fadeInRight>
+            <p class="m-0 body-1">Terminale F2</p>
+            <p class="m-0 caption text-hint">Mathématiques, Genie Industriel, Physique</p>
+          </div>
+        </div>
+        
+
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+               class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icSchool" size="20px"></ic-icon>
+          </div>
+
+          
+          <div @fadeInRight>
+            <p class="m-0 body-1">Lycée Victor Hugo</p>
+            <p class="m-0 caption text-hint">Port-Gentil, Gabon</p>
+          </div>
+        </div>
+
+        
+
+       
+      </div>
+    </div>
+
+    <div class="card mt-6">
+      <div class="px-gutter py-4 border-b" fxLayout="row">
+        <h2 class="title m-0">projet professionnel</h2>
+        <div  class="btn_modify rounded-full bg-primary-light">
+          <button  (click)="open()"  mat-icon-button type="button">
+            <mat-icon [icIcon]="icEdit"></mat-icon>
+          </button>
+        </div>
+        
+      </div>
+
+      
+      <div class="px-gutter py-4 border-b">
+
+        <p>
+          Je suis actuellement étudiant à [Nom de l’école / de l’Université], 
+        je suis une formation de [détail de la formation / spécialisation] et 
+        j’ai choisi cette voie car je suis passionné par le domaine du web. 
+        Je cherche à évoluer dans un environnement à taille humaine qui favorise 
+        le dialogue, et en discutant avec un ancien camarade de [Telle école/Université], 
+        il m’a confirmé que votre entreprise se soucie de ses employés et engage une vraie 
+        relation de confiance avec eux.
+        </p>
+        <p>
+          J’ai créé mon propre site, ce qui m’a permis de développer de nombreuses 
+        compétences, par exemple en PHP, SQl et JavaScript. Progressivement, 
+        je me suis rendu compte que je souhaitais occuper un poste de développeur
+        front-end. Mon souhait est de gagner en polyvalence pour, dans quelques années,
+          viser un poste de développeur full stack. Cette légitimité technique me permettra, 
+          je l’espère, de prendre régulièrement en charge le rôle de chef de projet.
+        </p>
+
+      </div>
+    
+      
+    </div>
+  </div>
+
+  <div class="card max-w-unset md:max-w-xs w-full flex-none md:ltr:ml-6 md:rtl:mr-6 mt-6 md:mt-0">
+    <div class="px-6 py-4 border-b" fxLayout="row">
+      <h2 class="title m-0">Me découvrir</h2>
+      <div  class="btn_modify rounded-full bg-primary-light">
+        <button  (click)="open()"  mat-icon-button type="button">
+          <mat-icon [icIcon]="icEdit"></mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div @stagger class="px-6 py-4" fxLayout="column" fxLayoutGap="16px">
+      <p class="px-gutter py-4 border-b">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac placerat lacus. Duis at felis et mauris fermentum euismod. Etiam at dapibus lacus. Aliquam vitae efficitur purus, eu mattis diam. Vivamus id dapibus est. Vivamus quis turpis sed leo pellentesque ornare et nec mauris. Nam vel mi gravida, vestibulum urna non, maximus velit.
+      </p>
+    </div>
+  </div>
+</div>

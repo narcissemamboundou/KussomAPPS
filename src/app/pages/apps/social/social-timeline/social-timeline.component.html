@@ -1,0 +1,207 @@
+<div class="mt-6 flex flex-col md:flex-row md:items-start">
+  <div class="flex-auto">
+    <div class="flex justify-between">
+      <div class="relative flex items-center cursor-pointer select-none rounded-full px-4 py-1 hover:bg-primary-light trans-ease-out"
+           matRipple>
+        <div @scaleIn class="p-2 bg-primary-light text-primary rounded-full ltr:mr-4 rtl:ml-4">
+          <mat-icon [icIcon]="icAdd" class="block"></mat-icon>
+        </div>
+        <p @fadeInRight class="font-medium text-primary">Partager une réflexion</p>
+      </div>
+
+      <div class="relative flex items-center cursor-pointer select-none rounded-full px-4 py-2 hover:bg-green-light trans-ease-out"
+           matRipple>
+        <div @scaleIn class="p-2 bg-green-light text-green rounded-full ltr:mr-4 rtl:ml-4">
+          <mat-icon [icIcon]="icAddAPhoto" class="block"></mat-icon>
+        </div>
+        <p @fadeInRight class="font-medium text-green">Prendre une photo</p>
+      </div>
+
+      <div class="relative flex items-center cursor-pointer select-none rounded-full px-4 py-2 hover:bg-cyan-light trans-ease-out"
+           matRipple>
+        <div class="p-2 bg-cyan-light text-cyan rounded-full ltr:mr-4 rtl:ml-4">
+          <mat-icon [icIcon]="icPhotoFilter" class="block"></mat-icon>
+        </div>
+        <p @fadeInRight class="font-medium text-cyan">Créer une story</p>
+      </div>
+    </div>
+
+    <div @fadeInUp class="card mt-6">
+      <div (click)="textarea.focus()" class="bg-white rounded-t p-6">
+        <textarea #textarea
+                  cdkTextareaAutosize
+                  class="w-full textarea-clean bg-white"
+                  placeholder="Partager une réflexion ..."></textarea>
+      </div>
+
+      <div class="bg-app-bar flex">
+        <button class="text-secondary uppercase font-medium" mat-button type="button">
+          <ic-icon [icon]="icAddAPhoto"
+                   [inline]="true"
+                   class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2"
+                   size="18px"></ic-icon>
+          <span class="text-xs">Photo</span>
+        </button>
+        <button class="text-secondary uppercase font-medium" mat-button type="button">
+          <ic-icon [icon]="icAttachFile"
+                   [inline]="true"
+                   class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2"
+                   size="18px"></ic-icon>
+          <span class="text-xs">File/Document</span>
+        </button>
+
+        <span class="flex-1"></span>
+
+        <button class="text-secondary uppercase font-medium bg-primary text-primary-contrast rounded-none ltr:rounded-br rtl:rounded-bl"
+                mat-button
+                type="button">
+          <span>POST</span>
+          <ic-icon [icIcon]="icKeyboardArrowRight"
+                   [inline]="true"
+                   class="ltr:-mr-1 rtl:-ml-1 ltr:ml-2 rtl:mr-2"
+                   size="20px"></ic-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row">
+      <div class="flex-1">
+        <div @fadeInUp class="card mt-6">
+          <vex-profile-timeline-entry avatarUrl="assets/img/avatars/5.jpg"
+                                      comments="4"
+                                      imageUrl="assets/img/demo/5.jpg"
+                                      likes="48"
+                                      name="Lucia D."
+                                      time="il y'a 33 minutes ">
+            <p class="px-gutter pt-1 pb-4">En construction</p>
+          </vex-profile-timeline-entry>
+        </div>
+
+        
+      </div>
+
+      <div class="flex-1 sm:ltr:ml-4 sm:rtl:mr-4">
+        <div @fadeInUp class="card mt-6">
+          <vex-profile-timeline-entry avatarUrl="assets/img/avatars/3.jpg"
+                                      comments="2"
+                                      likes="14"
+                                      name="Axel Abaga"
+                                      time="il y'a 23 minutes">
+            <p class="px-gutter pt-1 pb-4">En construction</p>
+          </vex-profile-timeline-entry>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="flex-none max-w-unset md:max-w-xs w-full md:ltr:ml-6 md:rtl:mr-6 mt-6 md:mt-0">
+    <div class="card">
+      <div class="px-gutter py-4 border-b">
+        <h2 class="title m-0">Mon compte</h2>
+      </div>
+
+      
+      <div class="px-gutter py-3">
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icPhone" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">+241 502-3182</p>
+            <p class="m-0 caption text-hint">Numéro de télephone</p>
+          </div>
+        </div>
+      
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icMail" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">david.smith@example.com</p>
+            <p class="m-0 caption text-hint">Email</p>
+          </div>
+        </div>
+      
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icWork" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">Lycée Victor Hugo</p>
+            <p class="m-0 caption text-hint">École</p>
+          </div>
+        </div>
+      
+      
+      
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icAccessTime" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">Tle S</p>
+            <p class="m-0 caption text-hint">Classe actuelle</p>
+          </div>
+        </div>
+      
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icAccessTime" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">2019</p>
+            <p class="m-0 caption text-hint">Année d'obtention du BAC</p>
+          </div>
+        </div>
+      
+        <div class="py-3" fxLayout="row" fxLayoutAlign="start center">
+          <div @scaleIn
+            class="w-10 h-10 rounded-full bg-primary-light text-primary ltr:mr-3 rtl:ml-3 flex items-center justify-center">
+            <ic-icon [icon]="icAccessTime" size="20px"></ic-icon>
+          </div>
+      
+          <div @fadeInRight>
+            <p class="m-0 body-1">Port-gentil (Gabon)</p>
+            <p class="m-0 caption text-hint">Ville (Pays)</p>
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+
+    <div class="card mt-6">
+      <div class="px-6 py-4 border-b">
+        <h2 class="title m-0">Suggestions</h2>
+      </div>
+
+      <div @stagger class="px-6 py-4" fxLayout="column" fxLayoutGap="16px">
+        <div *ngFor="let friend of suggestions; trackBy: trackByName" fxLayout="row" fxLayoutAlign="start center">
+          <img @scaleIn [src]="friend.imageSrc" alt="Profile Picture" class="avatar ltr:mr-3 rtl:ml-3" fxFlex="none"/>
+          <div @fadeInRight fxFlex="auto">
+            <h4 class="body-2 m-0 leading-snug">{{ friend.name }}</h4>
+            <h5 class="text-secondary m-0 caption leading-none">{{ friend.friends }} connexion en commun</h5>
+          </div>
+          <button (click)="addFriend(friend)" *ngIf="!friend.added" color="primary" mat-icon-button type="button">
+            <mat-icon [icIcon]="icPersonAdd"></mat-icon>
+          </button>
+
+          <button (click)="removeFriend(friend)" *ngIf="friend.added" color="primary" mat-icon-button type="button">
+            <mat-icon [icIcon]="icCheck"></mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="body-2 p-6 bg-primary text-primary-contrast">
+  <p>Aujourd'hui</p>
+  <div class="display-1">{{ dayName }}</div>
+  <div class="display-1">{{ date }}</div>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-nav-list>
+  <h3 matSubheader>Événements</h3>
+  
+  <a [routerLink]="[]" mat-list-item>
+    <h4 matLine>Début des procédures</h4>
+    <p matLine>18:30 PM</p>
+  </a>
+  <a [routerLink]="[]" mat-list-item>
+    <h4 matLine>Candidatures </h4>
+    <p matLine>18:30 PM</p>
+  </a>
+  <a [routerLink]="[]" mat-list-item>
+    <h4 matLine>Campus France</h4>
+    <p matLine>00:00 PM</p>
+  </a>
+  <mat-divider></mat-divider>
+  <h3 matSubheader>Action à réaliser</h3>
+  <a [routerLink]="[]" mat-list-item>
+    <h4 matLine>Inscription</h4>
+    <p matLine>Added: 6 hours ago</p>
+  </a>
+  <a [routerLink]="[]" mat-list-item>
+    <h4 matLine>Dépots des documents</h4>
+    <p matLine>Added: 2 days ago</p>
+  </a>
+  
+  <mat-divider></mat-divider>
+ 
+</mat-nav-list>
+
+

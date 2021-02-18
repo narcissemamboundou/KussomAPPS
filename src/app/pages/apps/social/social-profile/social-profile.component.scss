@@ -1,0 +1,11 @@
+h4 {
+  text-align: center;
+}
+.btn_modify{
+  position: relative;
+  margin-right: 2px;
+  .mat-icon {
+    color: var(--toolbar-icon-color);
+    
+  }
+}
